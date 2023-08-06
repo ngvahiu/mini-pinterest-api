@@ -213,7 +213,7 @@ export class UserService {
       if (user) {
         if (user.avatar) {
           //delete old file in server
-          fs.unlinkSync(process.cwd() + "\\public\\avatar\\" + imageUrl);
+          fs.unlinkSync(process.cwd() + "\\public\\avatar\\" + user.avatar);
         }
         await this.prisma.user.update({
           data: { ...user, avatar: imageUrl },
