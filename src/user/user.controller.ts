@@ -50,7 +50,7 @@ export class UserController {
 
   @ApiConsumes('multipart/form-data')
   @ApiBody({ description: 'avatar', type: UpdateUserUploadDto })
-  @UseInterceptors(FileInterceptor("file", {
+  @UseInterceptors(FileInterceptor("avatar", {
     storage: diskStorage({
       destination: process.cwd() + "/public/avatar",
       filename: (req, file, callback) => {
